@@ -1,0 +1,88 @@
+
+https://www.virtualbox.org/
+https://www.vagrantup.com
+
+/////////////////
+Virtualisation //
+/////////////////
+
+Créer un Vagrantfile pour pouvoir configurer la virtualisation avant le
+lancement: vagrant init
+
+Lignes du Vagrantfile à modifier:
+config.vm.box = "base" par config.vm.box = "ubuntu/xenial64"
+Puis décommenter la ligne:
+# config.vm.network "private_network", ip: "192.168.33.10"
+Puis modifier la ligne:
+# config.vm.synced_folder "../data", "/vagrant_data" par config.vm.synced_folder "./data", "/var/www/html"
+
+Démarrer l'environnement virtuel:
+vagrant up
+
+Arrêter l'environnement virtuel:
+vagrant halt
+
+Entrer dans l'environnement virtuel:
+vagrant ssh
+
+Mise à jour de la liste de paquets:
+sudo apt update
+
+Installer un paquet:
+sudo apt install nomDuPaquet
+
+Désinstaller un paquet:
+sudo apt remove nomDuPaquet
+
+Liste des paquets importants à télécharger:
+apache2 mysql-server php7.X(en fonction du besoin)
+
+Quitter le mode SSH:
+exit
+
+Détruire un environnement virtuel:
+vagrant destroy
+
+
+/////////////////
+Git
+////////////////
+
+Initialiser un repo Git en local:
+git init
+
+Ajouter un fichier/dossier:
+git add <nom>
+
+Ajouter tous les fichiers/dossiers:
+git add --all
+
+Voir l'état de notre repo:
+git status  (Commande vitale, n'hésitez pas à l'utiliser)
+
+Sauvegarder les fichiers/dossiers ajoutés au repo:
+git commit -m "message"
+
+Lister les remotes:
+git remote
+
+Ajouter une remote:
+git remote add <nom remote> <url du repo distant>
+
+Supprimer une remote:
+git remote rm <nom remote>
+
+Envoyer le contenu du repo local jusqu'au repo distant:
+git push <nom de la remote> <nom de la branch actuelle>
+
+Lister les branches existantes:
+git branch
+
+Ajouter une branche et aller dessus:
+git checkout -b <nom de la branche>
+
+Changer de branche:
+git checkout <nom de la branche>
+
+Supprimer une branche:
+git branch -d <nom de la branch>
